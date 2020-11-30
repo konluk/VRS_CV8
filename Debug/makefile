@@ -46,8 +46,8 @@ segment_display.bin \
 all: segment_display.elf secondary-outputs
 
 # Tool invocations
-segment_display.elf: $(OBJS) $(USER_OBJS) C:\STM_TEST\cv8\vrs_cvicenie_8-zadanie_cv8\STM32F303K8TX_FLASH.ld
-	arm-none-eabi-gcc -o "segment_display.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\STM_TEST\cv8\vrs_cvicenie_8-zadanie_cv8\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment_display.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+segment_display.elf: $(OBJS) $(USER_OBJS) C:\STM_TEST\cv8_final\VRS_CV8\STM32F303K8TX_FLASH.ld
+	arm-none-eabi-gcc -o "segment_display.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\STM_TEST\cv8_final\VRS_CV8\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment_display.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

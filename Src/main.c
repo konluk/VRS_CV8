@@ -31,7 +31,9 @@ extern uint64_t disp_time;
 uint64_t saved_time;
 double num_to_display = 10;
 int vypis[4];
-int text[50] = {'A','B'};
+int poc = 0;
+int smer = 0;
+int text[50] = {'L','U','K','A','S','_','K','O','N','C','A','L','_',8,6,1,1,9};
 
 int main(void)
 {
@@ -57,23 +59,22 @@ int main(void)
 
 
 
-  vypis[0]='_';
-  vypis[1]='B';
-  vypis[2]=6;
-  vypis[3]='A';
+
 
   while (1)
   {
 
-	  //	LL_GPIO_ResetOutputPin(GPIOA, LL_GPIO_PIN_3);
+	      vypis[0]=text[poc];
+	  	  vypis[1]=text[poc+1];
+	  	  vypis[2]=text[poc+2];
+	  	  vypis[3]=text[poc+3];
 
+	  	  if(smer==0){poc++;}else{poc--;}
 
-	  //  DIGIT_2_ON;
-	//  	DIGIT_3_ON;
-	  //	DIGIT_4_ON;
-	  //	DIGIT_TIME_ON;
-	  //setOne;
-		//DIGIT_2_ON;
+	  	  if(poc==14)smer=1;
+	  	  if(poc==0)smer=0;
+
+	  	  LL_mDelay(500);
   }
 
 }
